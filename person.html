@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expensapp</title>
+    <meta name="description" content="App to manage your expenses and help you with your finances">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    <script src="navbar.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1 class="title">Profile</h1>
+    </main>
+    <nav>
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-icon name="analytics-outline"></ion-icon>
+        <ion-icon name="person"></ion-icon>
+    </nav>
+    <script>
+        if ('serviceWorker' in navigator){
+            navigator.serviceWorker.register('/service-worker.js');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.buttons {
+    display: grid;
+    gap: 1dvh;
+}
+
+.buttons div {
+    display: flex;
+    height: min(3rem, 12dvh);
+    width: 100%;
+    background-color: var(--primary-color);
+    align-items: center;
+    justify-content: center;
+}
