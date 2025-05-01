@@ -10,16 +10,15 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
     <script src="navbar.js" defer></script>
-    <script src="create.js" defer></script>
+    <script src="transaction.js" defer></script>
 </head>
 <body>
     <main>
-        <h1 class="title">New Account</h1>
+        <h1 class="title">Transaction</h1>
         <form action="handleSubmit()">
-            <div class="name">
-                <input id="name" name="name" spellcheck="false" required type="text"> 
-                <label for="name">Name</label>
-            </div>
+            <select name="account" id="account">
+                <option value="" disabled selected>Select an account</option>
+            </select>
             <div class="tags-container">
                 <div class="tag">Groceries</div>
                 <div class="tag">Extras</div>
@@ -28,8 +27,8 @@
                 <div class="tag" id="add-tag">Add</div>
             </div>
             <hr>
-            <div class="description">
-                <textarea name="description" id="description"></textarea> <label for="description">Description</label>
+            <div class="note">
+                <textarea name="note" id="note"></textarea> <label for="note">Note</label>
             </div>
             
         </form>

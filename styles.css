@@ -295,22 +295,15 @@ input[type="checkbox"] {
     padding:  min(2vw, .5rem);
 }
 
-.tags-container .add-custom-tags {
-    background-color: var(--text-color);
-    color: var(--background-color);
-    width: min(2rem,4vw);
-    height: calc(min(2rem, 4vw));
-    text-align: center;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
+#add-tag {
+    border: 2px solid var(--primary-color);
 }
 
-.description {
+.note {
     position: relative;
 }
 
-#description {
+#note {
     background-color: transparent;
     border-radius: 5px;
     outline: transparent;
@@ -322,7 +315,7 @@ input[type="checkbox"] {
     resize: none;
 }
 
-#description ~ label{
+#note ~ label{
     pointer-events: none;
     background-color: var(--background-color);
     padding: 0 min(3vh, .5rem);
@@ -334,12 +327,24 @@ input[type="checkbox"] {
     transition: font-size 0.3s, top 0.3s, left 0.3s;
 }
 
-#description:focus, #description:focus-visible {
+#note:focus, #description:focus-visible {
     border: 2px solid var(--primary-color);
 }
 
-#description:focus ~ label {
+#note:focus ~ label {
     top: 0 !important;
     left: 5% !important;
     font-size: 90% !important;
+}
+
+select[id="account"] {
+    background-color: transparent;
+    border-radius: 5px;
+    outline: transparent;
+    border: 2px solid var(--navbar-color);
+    transition: border 0.3s;
+    padding: min(2vw, .5rem);
+    font-size: min(1.5rem, 5vw);
+    width: 100%;
+    margin-bottom: 2vh;
 }
