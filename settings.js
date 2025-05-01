@@ -1,8 +1,27 @@
-window.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const settings = document.getElementById('settings'),
     darkmodeToggle = document.getElementById('darkmode'),
-    accentSelector = document.getElementById('accent');
+    accentSelectors = document.querySelector('.radio-container'),
+    addColorButton = document.getElementById('add');
     let darkmode = localStorage.getItem('darkmode');
+
+    for(let i = 0; i < accentSelectors.childElementCount; i++){
+        if (window.getComputedStyle(accentSelectors.children[i], '::after').backgroundColor == localStorage.getItem('color')) {
+            accentSelectors.children[i].checked = true;
+            addColorButton.nextElementSibling.style.outline = 'none';
+            break;
+        } else {
+            addColorButton.nextElementSibling.style.outline = `2px solid ${localStorage.getItem('color')}`;
+        }
+    };
+
+    accentSelectors.addEventListener('click', function(e) {
+        if (e.target.parentElement == accentSelectors && e.target.getAttribute('name') == 'accent') {
+            addColorButton.nextElementSibling.style.outline = 'transparent';
+            localStorage.setItem('color', window.getComputedStyle(e.target, '::after').backgroundColor);
+            document.querySelector(':root').style.setProperty('--primary-color', localStorage.getItem('color'));
+        } else return;
+    });
 
     function openDropdown(open, name) {
         let options = settings.querySelectorAll('li')
@@ -12,14 +31,12 @@ window.addEventListener('DOMContentLoaded', function () {
             if (title == name) {
                 const listName = document.getElementById(title.toLowerCase());
                 if (open) {
-                    listName.style.display = 'block';
+                    listName.style.gridTemplateRows = '1fr';
                 } else {
-                    listName.style.display = 'none';
+                    listName.style.gridTemplateRows = '0fr';
                 }
                 
-            } else {
-                return;
-            };
+            }
         };
     };
     
@@ -49,6 +66,25 @@ window.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('darkmode', null);
         } else {
             localStorage.setItem('darkmode', 'active')
-        }
-    })
+        };
+    });
+
+    addColorButton.addEventListener('change', function() {
+        for(let i = 0; i < accentSelectors.childElementCount; i++){
+            accentSelectors.children[i].checked = false;
+        };
+        localStorage.setItem('color', addColorButton.value);
+        document.querySelector(':root').style.setProperty('--primary-color', localStorage.getItem('color'));
+        addColorButton.nextElementSibling.style.outline = `2px solid ${localStorage.getItem('color')}`;
+    });
+
+    setTimeout(() => {
+        document.querySelectorAll('*').forEach(element => {
+            const currentTransition = window.getComputedStyle(element).transition;
+            const newTransition = 'background-color 0.2s, color 0.2s';
+            element.style.transition = currentTransition
+                ? `${currentTransition}, ${newTransition}`
+                : newTransition;
+        });
+    }, 20);
 });

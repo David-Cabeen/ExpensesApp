@@ -10,7 +10,6 @@
 .lightmode {
     --background-color: #eee;
     --text-color: #141414;
-    --primary-color: #0099ff;
     --navbar-color: #888;
 }
 
@@ -49,7 +48,7 @@ nav {
     height: 10dvh;
 }
 
-li ion-icon {
+ul > li > ion-icon {
     padding: 1rem;
     transition: rotate 0.3s;
 }
@@ -70,7 +69,6 @@ hr {
 
 ul {
     list-style-type: none;
-    transition: heigth 0.5s;
 }
 
 li {
@@ -83,11 +81,13 @@ li {
 }
 
 #theme, #account {
-    display: none;
+    display: grid;
+    grid-template-rows: 0fr;
     font-size: min(1.5rem, 5vw);
-    margin-top: 1dvh;
-    margin: .8rem;
-    transition: height 0.5s;
+    transition: grid-template-rows 0.3s;
+    > div {
+        overflow: hidden;
+    }
 }
 
 ul ul li {
@@ -107,6 +107,7 @@ ul ul li {
 nav ion-icon{
     position: relative;
     font-size: min(2rem, 7.5vw);
+    padding: 1rem;
 }
 
 .toggle-container {
@@ -158,9 +159,187 @@ input[type="checkbox"] {
 }
 
 .radio-container input[type="radio"] {
-    border: none;
-    opacity: 1;
-    outline: transparent;
     aspect-ratio: 1;
     width: max(1rem, 2vw);
+    position: relative;
+    margin: 0 .5vw;
+    visibility: hidden;
+}
+
+.radio-container input[type="radio"]::after {
+    visibility: visible;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    transition: outline 0.2s;
+}
+
+.radio-container input[type="radio"]:checked::after{
+    outline: 2px solid var(--text-color);
+}
+
+#one::after {
+    background-color: #0099ff;
+}
+
+#two::after {
+    background-color: #ff3535;
+}
+
+#three::after {
+    background-color: #36a645;
+}
+
+#add + label {
+    width: max(1rem, 2vw);
+    height: max(1rem, 2vw);
+    position: relative;
+    margin: 0 .5vw;
+    border-radius: 50%;
+    color: var(--background-color);
+    background-color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: outline 0.2s;
+}
+
+#add {
+    position: absolute;
+    width: max(1rem, 2vw);
+    height: max(1rem, 2vw);
+    z-index: 2;
+    scale: 1.1;
+    opacity: 0;
+}
+
+#account ion-icon{
+    margin: 0 1rem;
+}
+
+.buttons {
+    display: grid;
+    gap: 1dvh;
+}
+
+.buttons div {
+    display: flex;
+    height: min(3rem, 12dvh);
+    width: 100%;
+    background-color: var(--primary-color);
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.name input{
+    background-color: transparent;
+    border-radius: 5px;
+    outline: transparent;
+    border: 2px solid var(--navbar-color);
+    transition: border 0.3s;
+    padding: min(2vw, .5rem);
+    font-size: min(1.5rem, 5vw);
+    width: 100%;
+}
+
+.name input:focus, .input input:focus-visible {
+    border: 2px solid var(--primary-color);
+}
+
+.name input:focus + label, .name input:valid + label {
+    top: 0;
+    left: 5%;
+    font-size: 90%;
+}
+
+.name label {
+    pointer-events: none;
+    background-color: var(--background-color);
+    padding: 0 min(3vh, .5rem);
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: min(1.5rem, 5vw);
+    left: 2%;
+    transition: font-size 0.3s, top 0.3s, left 0.3s;
+}
+
+.tags-container {
+    height: max-content;
+    display: inline-flex;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.tags-container .tag {
+    border-radius: 16px;
+    height: max-content;
+    width: max-content;
+    margin: 0 .5vw;
+    border: 2px solid var(--navbar-color);
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding:  min(2vw, .5rem);
+}
+
+.tags-container .add-custom-tags {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    width: min(2rem,4vw);
+    height: calc(min(2rem, 4vw));
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.description {
+    position: relative;
+}
+
+#description {
+    background-color: transparent;
+    border-radius: 5px;
+    outline: transparent;
+    border: 2px solid var(--navbar-color);
+    transition: border 0.3s;
+    padding: min(2vw, .5rem);
+    font-size: min(1.5rem, 5vw);
+    width: 100%;
+    resize: none;
+}
+
+#description ~ label{
+    pointer-events: none;
+    background-color: var(--background-color);
+    padding: 0 min(3vh, .5rem);
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: min(1.5rem, 5vw);
+    left: 2%;
+    transition: font-size 0.3s, top 0.3s, left 0.3s;
+}
+
+#description:focus, #description:focus-visible {
+    border: 2px solid var(--primary-color);
+}
+
+#description:focus ~ label {
+    top: 0 !important;
+    left: 5% !important;
+    font-size: 90% !important;
 }

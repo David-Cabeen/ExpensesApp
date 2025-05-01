@@ -20,34 +20,36 @@
             <li><h2>Theme</h2><ion-icon name="chevron-forward-outline"></ion-icon>
             </li>
             <ul id="theme">
-                <li>
-                    Dark Mode <div class="toggle-container"><input type="checkbox" checked name="darkmode" id="darkmode"><span></span></div>
-                </li>
-                <li>
-                    Accent Color 
-                    <div class="radio-container">
-                        <input type="radio" name="accent" id="">
-                        <input type="radio" name="accent" id="">
-                        <input type="radio" name="accent" id="">
-                    </div>
-                </li>
-                <li>
-                    Font 
-                </li>
+                <div>
+                    <li>
+                        Dark Mode <div class="toggle-container"><input type="checkbox" checked name="darkmode" id="darkmode"><span></span></div>
+                    </li>
+                    <li>
+                        Accent Color 
+                        <div class="radio-container">
+                            <input type="radio" name="accent" id="one">
+                            <input type="radio" name="accent" id="two">
+                            <input type="radio" name="accent" id="three">
+                            <input type="color" name="color" id="add"><label for="color">+</label>
+                        </div>
+                    </li>
+                    <li>
+                        Font
+                    </li>
+                </div>
             </ul>
             <hr>
             <li><h2>Account</h2><ion-icon name="chevron-forward-outline"></ion-icon>
             </li>
             <ul id="account">
-                <li>
-                    hellor
-                </li>
-                <li>
-                    Accent Color
-                </li>
-                <li>
-                    Font 
-                </li>
+                <div>
+                    <li>
+                        <label for="email">Email</label><input style="display: none;" type="email" name="email" id="emailSettings"><ion-icon name="mail-outline"></ion-icon>
+                    </li>
+                    <li>
+                        Password <ion-icon name="key-outline"></ion-icon>
+                    </li>
+                </div>
             </ul>
         </ul>
     </main>

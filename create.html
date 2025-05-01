@@ -10,17 +10,34 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
     <script src="navbar.js" defer></script>
+    <script src="create.js" defer></script>
 </head>
 <body>
     <main>
-        <h1 class="title">Accounts</h1>
-        
+        <h1 class="title">Create</h1>
+        <form action="handleSubmit()">
+            <div class="name">
+                <input id="name" name="name" spellcheck="false" required type="text"> 
+                <label for="name">Name</label>
+            </div>
+            <div class="tags-container">
+                <div class="tag">Groceries</div>
+                <div class="tag">Extras</div>
+                <div class="tag">Outings</div>
+                <div class="tag">Transportation</div>
+                <div class="add-custom-tags">+</div>
+            </div>
+            <hr>
+            <div class="description">
+                <textarea name="description" id="description"></textarea> <label for="description">Description</label>
+            </div>
+        </form>
     </main>
     <nav>
         <ion-icon name="home-outline"></ion-icon>
         <ion-icon name="settings-outline"></ion-icon>
         <ion-icon name="analytics-outline"></ion-icon>
-        <ion-icon name="person"></ion-icon>
+        <ion-icon name="person-outline"></ion-icon>
     </nav>
     <script>
         if ('serviceWorker' in navigator){
