@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 default : page = page;
             };
             console.log(page);
-            window.location.assign(page);
+            window.location.assign(page + '.html');
         };
     });
     if(darkmode !== 'active') {
