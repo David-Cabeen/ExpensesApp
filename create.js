@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('button'),
-    noteBox = document.getElementById('note'),
-    accountList = [JSON.parse(localStorage.getItem('accounts'))]
+    noteBox = document.getElementById('note');
+    let accountList = [];
+
+    if (localStorage.getItem('accounts')) {
+        accountList = [JSON.parse(localStorage.getItem('accounts'))];
+    } else {
+        accountList = [];
+    }
 
     button.addEventListener('click', () => {
         const newAcc = {
