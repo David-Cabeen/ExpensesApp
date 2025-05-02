@@ -49,13 +49,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function cycleForwards() {
-        currentPage += 1;
-        window.location.assign(pages[currentPage] + '.html');
+        if (currentPage != 3) {
+            currentPage += 1;
+            window.location.assign(pages[currentPage] + '.html');
+        };
     };
 
     function cycleBackwards() {
-        currentPage -= 1;
-        window.location.assign(pages[currentPage] + '.html');
+        if (currentPage != 0) {
+            currentPage -= 1;
+            window.location.assign(pages[currentPage] + '.html');
+        }
     };
 
 });
