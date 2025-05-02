@@ -15,4 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             label.fontSize = '100%';
         }
     });
+
+
 });
