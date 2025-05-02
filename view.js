@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
         currency.textContent = account.currency;
         balance.textContent = account.balance;
         const order = [accountName, edit, document.createElement('hr'), currency, balance]
-        div.replaceChildren(order);
+        div.replaceChildren(...order);
         accountsParent.appendChild(div);
     }
 });
