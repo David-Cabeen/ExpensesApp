@@ -19,4 +19,35 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.remove('lightmode');
     };
     document.querySelector(':root').style.setProperty('--primary-color', color);
+
+    let touchstartX = 0;
+    let touchendX = 0;
+        
+    function checkDirection() {
+        if (touchendX < touchstartX) cycleForwards();
+        if (touchendX > touchstartX) cycleBackwards();
+    }
+
+    document.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        checkDirection();
+    });
+
+    const pages = ['index', 'settings', 'analytics', 'person'];
+    let currentPage = pages[0];
+
+    function cycleForwards() {
+        currentPage++;
+        window.location.assign(currentPage = '.html');
+    };
+
+    function cycleBackwards() {
+        currentPage--;
+        window.location.assign(currentPage = '.html');
+    };
+
 });
