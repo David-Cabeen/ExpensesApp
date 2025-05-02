@@ -10,12 +10,16 @@ window.addEventListener('DOMContentLoaded', () => {
         const div = document.createElement('div'),
         accountName = document.createElement('h2'),
         currency = document.createElement('h3'),
-        balance = document.createElement('h3');
+        balance = document.createElement('h3'),
+        edit = document.createElement('ion-icon');
+        edit.setAttribute('name', 'create-outline')
+        currency.classList.add('currency');
+        balance.classList.add('balance')
         accountsParent.textContent = '';
         accountName.textContent = account.name;
         currency.textContent = account.currency;
         balance.textContent = account.balance;
-        div.append(accountName, document.createElement('ion-icon').setAttribute('name', 'create-outline'), document.createElement('hr'), currency.classList.add('currency'), balance.classList.add('balance'));
+        div.append(accountName, edit, document.createElement('hr'), currency, balance);
         accountsParent.appendChild(div);
     }
 });
