@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let touchendX = 0;
         
     function checkDirection() {
-        if (touchendX < touchstartX) cycleForwards();
-        if (touchendX > touchstartX) cycleBackwards();
-    }
+        if (Math.abs(touchendX - touchstartX) > 250) {
+            if (touchendX < touchstartX) cycleForwards();
+            if (touchendX > touchstartX) cycleBackwards();
+        };
+    };
 
     document.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
@@ -38,16 +40,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const pages = ['index', 'settings', 'analytics', 'person'];
-    let currentPage = pages[0];
+    let currentPage = 0;
+    console.log(currentPage)
 
     function cycleForwards() {
         currentPage++;
-        window.location.assign(currentPage = '.html');
+        window.location.assign(pages[currentPage] + '.html');
     };
 
     function cycleBackwards() {
         currentPage--;
-        window.location.assign(currentPage = '.html');
+        window.location.assign(pages[currentPage] + '.html');
     };
 
 });
