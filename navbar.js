@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let touchendX = 0;
         
     function checkDirection() {
-        if (Math.abs(touchendX - touchstartX) > 250) {
+        if (Math.abs(touchendX - touchstartX) > 150) {
             if (touchendX < touchstartX) cycleForwards();
             if (touchendX > touchstartX) cycleBackwards();
         };
@@ -41,14 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const pages = ['index', 'settings', 'analytics', 'person'];
     let currentPage = 0;
-    console.log(window.location);
-    switch (window.location) {
+    switch (window.location.pathname.replace('/', '')) {
         case 'index.html' : currentPage = 0; break;
         case 'settings.html' : currentPage = 1; break;
         case 'analytics.html' : currentPage = 2; break;
         case 'person.html' : currentPage = 3;
     }
-    console.log(currentPage);
 
     function cycleForwards() {
         currentPage += 1;
