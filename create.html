@@ -20,18 +20,13 @@
                 <input id="name" name="name" spellcheck="false" required type="text"> 
                 <label for="name">Name</label>
             </div>
-            <div class="tags-container">
-                <div class="tag">Groceries</div>
-                <div class="tag">Extras</div>
-                <div class="tag">Outings</div>
-                <div class="tag">Transportation</div>
-                <div class="tag" id="add-tag">Add</div>
-            </div>
             <hr>
             <div class="description">
                 <textarea name="description" id="description"></textarea> <label for="description">Description</label>
             </div>
-            
+            <input type="text" name="currency" id="currency">
+            <input type="number" name="balance" id="balance" step="any" min="1">
+            <input type="button" value="handleSubmit">
         </form>
     </main>
     <nav>
