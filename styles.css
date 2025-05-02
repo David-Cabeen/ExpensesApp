@@ -356,7 +356,8 @@ select[id="account"] {
     gap: 1vh;
     color: var(--navbar-color);
     text-align: center;
-    justify-content: center;
+    align-items: center;
+    font-size: clamp(2rem, calc(7vw + 1rem), 4rem);
 }
 
 .account-view div {
