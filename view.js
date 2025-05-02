@@ -1,13 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => {
     let accounts = JSON.parse(localStorage.getItem('accounts'));
     const accountsParent = document.querySelector('.account-view')
+    console.log(accounts)
     if (!accounts) {
         accountsParent.textContent = 'No accounts created \n Make one!';
         accountsParent.addEventListener('click', () => {
             window.location.assign('create.html');
         });
     } else {
-        accounts.forEach(account => {
+        for (let i = 0; i < accounts.length; i++) {
             const div = document.createElement('div'),
             accountName = document.createElement('h2'),
             currency = document.createElement('h3'),
@@ -17,11 +18,11 @@ window.addEventListener('DOMContentLoaded', () => {
             currency.classList.add('currency');
             balance.classList.add('balance')
             accountsParent.textContent = '';
-            accountName.textContent = account.name;
-            currency.textContent = account.currency;
-            balance.textContent = account.balance;
+            accountName.textContent = accounts[i].name;
+            currency.textContent = accounts[i].currency;
+            balance.textContent = accounts[i].balance;
             div.append(accountName, edit, document.createElement('hr'), currency, balance);
             accountsParent.appendChild(div);
-        });
+        };
     }
 });
