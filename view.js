@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
-    let accounts = localStorage.getItem('account');
+    let account = localStorage.getItem('account');
     const accountsParent = document.querySelector('.account-view')
-    if (!accounts) {
+    if (!account) {
         accountsParent.textContent = 'No accounts created \n Make one!';
         accountsParent.addEventListener('click', () => {
             window.location.assign('create.html');
