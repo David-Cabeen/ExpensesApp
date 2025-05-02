@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(currentPage)
 
     function cycleForwards() {
-        currentPage++;
+        currentPage += 1;
         window.location.assign(pages[currentPage] + '.html');
     };
 
     function cycleBackwards() {
-        currentPage--;
+        currentPage -= 1;
         window.location.assign(pages[currentPage] + '.html');
     };
 
