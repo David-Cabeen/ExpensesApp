@@ -365,6 +365,7 @@ select[id="account"] {
     border-radius: 5px;
     position: relative;
     color: var(--text-color);
+    height: 20dvh;
 }
 
 .account-view div h2 {
