@@ -41,7 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const pages = ['index', 'settings', 'analytics', 'person'];
     let currentPage = 0;
-    console.log(currentPage)
+    switch (window.location) {
+        case 'index.html' : currentPage = 0; break;
+        case 'settings.html' : currentPage = 1; break;
+        case 'analytics.html' : currentPage = 2; break;
+        case 'person.html' : currentPage = 3;
+    }
 
     function cycleForwards() {
         currentPage += 1;
