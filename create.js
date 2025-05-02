@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('button'),
-    noteBox = document.getElementById('note');
+    noteBox = document.getElementById('note'),
+    accountList = [JSON.parse(localStorage.getItem('accounts'))]
 
     button.addEventListener('click', () => {
         const newAcc = {
@@ -9,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
             currency : document.getElementById('currency').value,
             balance : document.getElementById('balance').value
         };
-        localStorage.setItem('account', JSON.stringify(newAcc));
+        accountList.push(newAcc);
+        localStorage.setItem('accounts', JSON.stringify(accountList));
         setTimeout(() => {
             window.location.assign('view.html');
         }, 1);
