@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!accounts) {
         accountsParent.textContent = 'No accounts created \n Make one!';
         accountsParent.addEventListener('click', () => {
-            document.location.assign('create.html');
+            window.location.assign('create.html');
         });
     } else {
         const account = JSON.parse(localStorage.getItem('account')),

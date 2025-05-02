@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
             balance : document.getElementById('balance').value
         };
         localStorage.setItem('account', JSON.stringify(newAcc));
+        setTimeout(() => {
+            window.location.assign('view.html');
+        }, 1);
     });
 
     noteBox.addEventListener('input', () => {
