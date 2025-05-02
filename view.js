@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    let accounts = localStorage.getItem('accounts');
+    let accounts = localStorage.getItem('account');
     const accountsParent = document.querySelector('.account-view')
     if (!accounts) {
         accountsParent.textContent = 'No accounts created \n Make one!';
@@ -7,8 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
             window.location.assign('create.html');
         });
     } else {
-        const account = JSON.parse(localStorage.getItem('account')),
-        div = document.createElement('div'),
+        const div = document.createElement('div'),
         accountName = document.createElement('h2'),
         currency = document.createElement('h3'),
         balance = document.createElement('h3');
