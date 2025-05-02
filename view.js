@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
         accountName.textContent = account.name;
         currency.textContent = account.currency;
         balance.textContent = account.balance;
-        div.replaceChildren(accountName, edit, document.createElement('hr'), currency, balance);
+        div.replaceChildren([accountName, edit, document.createElement('hr'), currency, balance]);
         accountsParent.appendChild(div);
     }
 });
