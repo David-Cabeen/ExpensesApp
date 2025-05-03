@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 case 'home' : page = 'index'; break;
                 default : page = page;
             };
-            console.log(page);
             window.location.assign(page + '.html');
         };
     });
