@@ -33,7 +33,9 @@ body {
 main {
     position: relative;
     width: 95%;
-    height: 95dvh;
+    height: 80dvh;
+    position: absolute;
+    top: 5dvh;
     text-align: center;
 }
 

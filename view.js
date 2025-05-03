@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let accounts = JSON.parse(localStorage.getItem('accounts'));
     const accountsParent = document.querySelector('.account-view')
     if (!accounts) {
-        accountsParent.textContent = 'No accounts created \n Make one!';
+        accountsParent.textContent = 'No accounts created.\nClick anywhere to make one!';
         accountsParent.addEventListener('click', () => {
             window.location.assign('create.html');
         });
