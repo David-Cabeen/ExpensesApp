@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const noteBox = document.getElementById('note'),
     tagsContainer = document.querySelector('.tags-container'),
-    accountSelector = document.getElementById('account');
+    accountSelector = document.getElementById('account'),
+    accounts = JSON.parse(localStorage.getItem('accounts'));
 
     noteBox.addEventListener('input', () => {
         const label = noteBox.nextElementSibling.style;
@@ -16,5 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    if (accounts) {
+        accounts.forEach(account => {
+            const option = document.createElement('option');
+            option.value = account.name;
+            option.textContent = account.name;
+            accountSelector.appendChild(option);
+        });
+    }
 
 });
