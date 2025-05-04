@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             balance : document.getElementById('balance').value
         };
         accountList.push(newAcc);
+        console.log(accountList)
         localStorage.setItem('accounts', JSON.stringify(accountList));
         setTimeout(() => {
             window.location.assign('view.html');

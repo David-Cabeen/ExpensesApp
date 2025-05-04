@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
     let accounts = JSON.parse(localStorage.getItem('accounts'));
-    console.log(accounts, accounts[0], accounts[1], accounts[0].name)
     const accountsParent = document.querySelector('.account-view')
     if (!accounts) {
         accountsParent.textContent = 'No accounts created.\nClick anywhere to make one!';
