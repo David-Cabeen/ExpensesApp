@@ -161,26 +161,27 @@ input[type="checkbox"] {
 }
 
 .radio-container input[type="radio"] {
-    aspect-ratio: 1;
-    width: max(1rem, 2vw);
+    opacity: 0; /* Hide the input but keep pseudo-elements visible */
     position: relative;
+    width: max(1rem, 2vw);
+    height: max(1rem, 2vw);
     margin: 0 .5vw;
-    visibility: hidden;
 }
 
 .radio-container input[type="radio"]::after {
-    visibility: visible;
     content: '';
+    display: block;
     position: absolute;
     border-radius: 50%;
     top: 0;
     left: 0;
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
+    background-color: #0099ff; /* Example color */
     transition: outline 0.2s;
 }
 
-.radio-container input[type="radio"]:checked::after{
+.radio-container input[type="radio"]:checked::after {
     outline: 2px solid var(--text-color);
 }
 
