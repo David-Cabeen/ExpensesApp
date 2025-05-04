@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let accountList = [];
 
     if (localStorage.getItem('accounts')) {
-        accountList = [JSON.parse(localStorage.getItem('accounts'))];
+        accountList = JSON.parse(localStorage.getItem('accounts'));
     } else {
         accountList = [];
     }
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             balance : document.getElementById('balance').value
         };
         accountList.push(newAcc);
-        console.log(accountList)
         localStorage.setItem('accounts', JSON.stringify(accountList));
         setTimeout(() => {
             window.location.assign('view.html');
