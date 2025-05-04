@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
             window.location.assign('create.html');
         });
     } else {
-        for (let i = 0; i <= accounts.length; i++) {
+        accounts.forEach(account => {
             const div = document.createElement('div'),
             accountName = document.createElement('h2'),
             currency = document.createElement('h3'),
@@ -18,12 +18,12 @@ window.addEventListener('DOMContentLoaded', () => {
             currency.classList.add('currency');
             balance.classList.add('balance');
             accountsParent.textContent = '';
-            note.textContent = accounts[i].note;
-            accountName.textContent = accounts[i].name;
-            currency.textContent = accounts[i].currency;
-            balance.textContent = accounts[i].balance;
+            note.textContent = account.note;
+            accountName.textContent = account.name;
+            currency.textContent = account.currency;
+            balance.textContent = account.balance;
             div.append(accountName, edit, document.createElement('hr'), note, currency, balance);
             accountsParent.appendChild(div);
-        };
+        });
     }
 });
