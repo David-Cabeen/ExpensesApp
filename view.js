@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
             window.location.assign('create.html');
         });
     } else {
-        for (let i = 0; i < accounts.length; i++) {
+        for (let i = 0; i <= accounts.length; i++) {
             const div = document.createElement('div'),
             accountName = document.createElement('h2'),
             currency = document.createElement('h3'),
