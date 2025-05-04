@@ -15,10 +15,21 @@
 <body>
     <main>
         <h1 class="title">Transaction</h1>
-        <form action="handleSubmit()">
+        <form class="transaction-form">
             <select name="account" id="account">
                 <option value="" disabled selected>Select an account</option>
             </select>
+            <div class="transaction-type">
+                <label>
+                    Expense
+                    <input checked type="radio" name="transaction-type" id="expense">
+                </label>
+               <label>
+                Income
+                    <input type="radio" name="transaction-type" id="income">
+               </label>
+            </div>
+            <hr>
             <div class="tags-container">
                 <div class="tag">Groceries</div>
                 <div class="tag">Extras</div>
@@ -27,10 +38,15 @@
                 <div class="tag" id="add-tag">Add</div>
             </div>
             <hr>
+            <div class="name">
+                <input id="amount" name="amount" required spellcheck="false" type="number"> 
+                <label for="amount">Amount</label>
+            </div>
             <div class="note">
                 <textarea name="note" id="note"></textarea> <label for="note">Note</label>
             </div>
-            
+
+            <button>Add Transaction</button>
         </form>
     </main>
     <nav>

@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const noteBox = document.getElementById('note'),
     tagsContainer = document.querySelector('.tags-container'),
     accountSelector = document.getElementById('account'),
+    submitButton = document.querySelector('button'),
+    amount = document.getElementById('amount'),
+    expense = document.getElementById('expense'),
     accounts = JSON.parse(localStorage.getItem('accounts'));
+    let transactionList = [];
 
     noteBox.addEventListener('input', () => {
         const label = noteBox.nextElementSibling.style;
@@ -24,6 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
             option.textContent = account.name;
             accountSelector.appendChild(option);
         });
-    }
+    };
+
+    submitButton.addEventListener('click', () => {
+        if (accountSelector.value != "Select an account" && amount.value) {
+            const transaction = {
+                type: expense.checked ? 'expense' : 'income',
+                amount: amount.value,
+                note: noteBox.value
+            };
+            transactionList.push(transaction);
+            localStorage.setItem(accountSelector.value, transactionList);
+        };
+    });
+
 
 });

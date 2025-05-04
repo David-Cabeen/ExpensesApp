@@ -396,3 +396,47 @@ h3.currency{
 h3.balance {
     right: min(2rem, 4vw);
 }
+
+.transaction-form button{
+    background-color: transparent;
+    outline: transparent;
+    border: 2px solid var(--navbar-color);
+    position: absolute;
+    bottom: 0;
+    right: min(1rem, 2vw);
+    border-radius: 5px;
+    padding: min(1rem, 2vw);
+}
+
+.transaction-type {
+    display: inline-flex;
+    width: 100%;
+}
+
+.transaction-type label {
+    border: 2px solid var(--navbar-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: min(2vw, .5rem);
+    width: 50%;
+    border-radius: 16px;
+    margin: 0 .5vw;
+    transition: border-color 0.3s;
+}
+
+.transaction-type label:has(input:checked) {
+    border-color: var(--primary-color);
+} 
+
+.transaction-type label input {
+    opacity: 0;
+}
+
+.name:has(input[name="amount"])::after {
+    content: "COP";
+    position: absolute;
+    top: 50%;
+    right: 5vw;
+    translate: 0 -50%;
+}
