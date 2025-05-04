@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
             window.location.assign('create.html');
         });
     } else {
+        accountsParent.textContent = '';
         accounts.forEach(account => {
             const div = document.createElement('div'),
             accountName = document.createElement('h2'),
@@ -17,7 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
             edit.setAttribute('name', 'create-outline')
             currency.classList.add('currency');
             balance.classList.add('balance');
-            accountsParent.textContent = '';
             note.textContent = account.note;
             accountName.textContent = account.name;
             currency.textContent = account.currency;
