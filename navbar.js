@@ -61,4 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+    if (isStandalone) {
+        document.documentElement.style.setProperty('--viewport-height', 'lvh');
+    } else {
+        document.documentElement.style.setProperty('--viewport-height', 'dvh');
+    }
+
 });

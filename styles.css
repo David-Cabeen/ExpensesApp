@@ -5,6 +5,7 @@
     --text-color: #eee;
     --primary-color: #0099ff;
     --navbar-color: #282828;
+    --viewport-height: lvh;
 }
 
 .lightmode {
@@ -26,16 +27,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
+    height: 100var(--viewport-height);
     background-color: var(--background-color);
 }
 
 main {
     position: relative;
     width: 95%;
-    height: 80dvh;
+    height: 80var(--viewport-height);
     position: absolute;
-    top: 5dvh;
+    top: 5var(--viewport-height);
     text-align: center;
 }
 
@@ -47,7 +48,7 @@ nav {
     align-items: center;
     background-color: var(--navbar-color);
     width: 100%;
-    height: 10dvh;
+    height: 10var(--viewport-height);
 }
 
 ul > li > ion-icon {
@@ -99,7 +100,7 @@ ul ul li {
 
 .title {
     font-size: clamp(2rem, calc(7vw + 1rem), 4rem);
-    margin: min(2rem, 8dvh);
+    margin: min(2rem, 8var(--viewport-height));
 }
 
 .open-settings-dropdown {
@@ -225,12 +226,12 @@ input[type="checkbox"] {
 
 .buttons {
     display: grid;
-    gap: 1dvh;
+    gap: 1var(--viewport-height);
 }
 
 .buttons div {
     display: flex;
-    height: min(3rem, 12dvh);
+    height: min(3rem, 12var(--viewport-height));
     width: 100%;
     background-color: var(--primary-color);
     align-items: center;
@@ -240,7 +241,7 @@ input[type="checkbox"] {
 .name {
     position: relative;
     width: 100%;
-    margin-bottom: 2vh;
+    margin-bottom: 2var(--viewport-height);
 }
 
 .name input{
@@ -267,7 +268,7 @@ input[type="checkbox"] {
 .name label {
     pointer-events: none;
     background-color: var(--background-color);
-    padding: 0 min(3vh, .5rem);
+    padding: 0 min(3var(--viewport-height), .5rem);
     position: absolute;
     top: 50%;
     translate: 0 -50%;
@@ -320,7 +321,7 @@ input[type="checkbox"] {
 #note ~ label{
     pointer-events: none;
     background-color: var(--background-color);
-    padding: 0 min(3vh, .5rem);
+    padding: 0 min(3var(--viewport-height), .5rem);
     position: absolute;
     top: 50%;
     translate: 0 -50%;
@@ -348,14 +349,14 @@ select[id="account"] {
     padding: min(2vw, .5rem);
     font-size: min(1.5rem, 5vw);
     width: 100%;
-    margin-bottom: 2vh;
+    margin-bottom: 2var(--viewport-height);
 }
 
 .account-view {
     width: 100%;
     height: 75%;
     display: grid;
-    gap: 1vh;
+    gap: 1var(--viewport-height);
     color: var(--navbar-color);
     text-align: center;
     font-size: clamp(1rem, calc(3.5vw + .5rem), 2rem);
