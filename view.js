@@ -1,4 +1,3 @@
-let accountToBeEdited;
 export { accountToBeEdited };
 
 window.addEventListener('DOMContentLoaded', () => {
