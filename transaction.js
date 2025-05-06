@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    accountSelector.addEventListener('input', () => {
+        document.querySelector('input[name="amount"]').style.setProperty('--after-content', JSON.parse(localStorage.getItem(accountSelector.value)).currency);
+    });
+
     submitButton.addEventListener('click', () => {
         if (accountSelector.value != "Select an account" && amount.value) {
             const transaction = {

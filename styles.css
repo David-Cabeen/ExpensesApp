@@ -397,7 +397,7 @@ h3.balance {
     right: min(2rem, 4vw);
 }
 
-.transaction-form button{
+.transaction-form button, .acc-create{
     background-color: transparent;
     outline: transparent;
     border: 2px solid var(--navbar-color);

@@ -1,6 +1,8 @@
+let accountToBeEdited;
+
 window.addEventListener('DOMContentLoaded', () => {
     let accounts = JSON.parse(localStorage.getItem('accounts'));
-    const accountsParent = document.querySelector('.account-view')
+    const accountsParent = document.querySelector('.account-view');
     if (!accounts) {
         accountsParent.textContent = 'No accounts created.\nClick anywhere to make one!';
         accountsParent.addEventListener('click', () => {
@@ -15,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
             balance = document.createElement('h3'),
             edit = document.createElement('ion-icon'),
             note = document.createElement('p');
-            edit.setAttribute('name', 'create-outline')
+            edit.setAttribute('name', 'create-outline');
             currency.classList.add('currency');
             balance.classList.add('balance');
             note.textContent = account.note;
@@ -24,6 +26,12 @@ window.addEventListener('DOMContentLoaded', () => {
             balance.textContent = account.balance;
             div.append(accountName, edit, document.createElement('hr'), note, currency, balance);
             accountsParent.appendChild(div);
+            edit.addEventListener('click', () => {
+                accountToBeEdited = edit.parentElement.querySelector('h2').textContent; 
+                window.location.assign('edit.html');
+            });
         });
     }
 });
+
+export { accountToBeEdited };
