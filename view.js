@@ -1,4 +1,5 @@
 let accountToBeEdited;
+export { accountToBeEdited };
 
 window.addEventListener('DOMContentLoaded', () => {
     let accounts = JSON.parse(localStorage.getItem('accounts'));
@@ -33,5 +34,3 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-export { accountToBeEdited };
