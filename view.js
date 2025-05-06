@@ -1,5 +1,3 @@
-export { accountToBeEdited };
-
 window.addEventListener('DOMContentLoaded', () => {
     let accounts = JSON.parse(localStorage.getItem('accounts'));
     const accountsParent = document.querySelector('.account-view');
@@ -28,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
             accountsParent.appendChild(div);
             edit.addEventListener('click', () => {
                 accountToBeEdited = edit.parentElement.querySelector('h2').textContent; 
-                window.location.assign('edit.html');
+                window.location.assign(`edit.html?account=${encodeURIComponent(accountName)}`);
             });
         });
     }
